@@ -1,5 +1,13 @@
 {
   "node": {},
   "edge": {},
+<<<<<<< Updated upstream
   "encryptionKey": "fZXab5cT2qNyHyXt1ErUVNepzAU5GPDgtbN+1xTSZPU="
+=======
+<<<<<<< HEAD
+  "encryptionKey": "DWXTXNRPRZ2A54ttrktzgAznDv9df0hc8eEXxucWrh8="
+=======
+  "encryptionKey": "fZXab5cT2qNyHyXt1ErUVNepzAU5GPDgtbN+1xTSZPU="
+>>>>>>> 37d845e62ba3733fe5cf55ce41bc9f2b644b0e8f
+>>>>>>> Stashed changes
 }

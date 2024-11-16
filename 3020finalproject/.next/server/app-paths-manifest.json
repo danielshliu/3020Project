@@ -1,4 +1,11 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+=======
+>>>>>>> 37d845e62ba3733fe5cf55ce41bc9f2b644b0e8f
+>>>>>>> Stashed changes
   "/page": "app/page.js"
 }

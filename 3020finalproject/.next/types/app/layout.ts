@@ -1,4 +1,12 @@
+<<<<<<< Updated upstream
 // File: D:\Github\3020Project\3020finalproject\src\app\layout.js
+=======
+<<<<<<< HEAD
+// File: /Users/gurvirsingh/Documents/GitHub/3020Project/3020finalproject/src/app/layout.js
+=======
+// File: D:\Github\3020Project\3020finalproject\src\app\layout.js
+>>>>>>> 37d845e62ba3733fe5cf55ce41bc9f2b644b0e8f
+>>>>>>> Stashed changes
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
