@@ -3,10 +3,12 @@ import styles from "./page.module.css";
 
 import Homepage from "./homepage";
 import CountryPage from "./countries";
+import { useRouter } from 'react';
 
 export default function Home() {
   return (
-    //Only one render can go at a time
+    // This is a rendering page so don't touch it
+    // Only one render can go at a time
     <Homepage></Homepage>
     // <CountryPage></CountryPage>
 
