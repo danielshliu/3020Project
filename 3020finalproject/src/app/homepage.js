@@ -11,7 +11,6 @@ export default function homapage(){
             <p>This is a paragraph</p>
             {/* I did work here */}
 
-
             <img src="/drog.jpeg" className={styles.drog}/>
 
          </div>

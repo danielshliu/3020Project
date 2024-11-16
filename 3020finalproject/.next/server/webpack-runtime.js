@@ -47,17 +47,11 @@
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 /******/ 	/* webpack/runtime/amd options */
 /******/ 	(() => {
 /******/ 		__webpack_require__.amdO = {};
 /******/ 	})();
 /******/ 	
-=======
->>>>>>> 37d845e62ba3733fe5cf55ce41bc9f2b644b0e8f
->>>>>>> Stashed changes
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -136,15 +130,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-<<<<<<< Updated upstream
-/******/ 		__webpack_require__.h = () => ("45d3ca6b9ecd91a8")
-=======
-<<<<<<< HEAD
-/******/ 		__webpack_require__.h = () => ("1fcc1e7b535deb69")
-=======
-/******/ 		__webpack_require__.h = () => ("45d3ca6b9ecd91a8")
->>>>>>> 37d845e62ba3733fe5cf55ce41bc9f2b644b0e8f
->>>>>>> Stashed changes
+/******/ 		__webpack_require__.h = () => ("d0b77e53a41b9704")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
