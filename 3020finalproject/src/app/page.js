@@ -11,7 +11,7 @@ export default function Home() {
     // This is a rendering page so don't touch it
     // Only one render can go at a time
     <Homepage></Homepage>
-    // <CountryPage></CountryPage>
+    //<CountryPage></CountryPage>
   
   );
 }
