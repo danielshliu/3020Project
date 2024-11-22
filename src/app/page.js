@@ -18,10 +18,15 @@ export default function Home() {
     // Only one render can go at a time
     // <CountryPage></CountryPage>
     
+
+
     <div> 
-      <DestinationSelection/>
+      <aboutuspage></aboutuspage>
+    {/* <DestinationSelection/> */}
       {/* <Homepage/> */}
     </div>
+
+
 
   );
 }
