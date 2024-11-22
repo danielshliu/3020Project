@@ -27,6 +27,7 @@
   padding-top: 20px; /* Optional: to add some padding from the top of the viewport */
 }
 
+/* Background for Oceania page */
 .page_OceaniaBackground__PuS0i {
   background-image: url('/836923.jpg');
   background-size: cover;
@@ -49,7 +50,7 @@
   color: white;
 }
 
-/* Navigation bar styling */
+/* Navigation bar styling up to navLink:hover */
 .page_navbar__chktt {
   display: flex;
   justify-content: space-between;
