@@ -48,6 +48,7 @@
   margin-bottom: 10px; /* Reduced margin to bring it closer to the navbar */
   font-size: 2.5rem;
   color: white;
+  margin-top: 20px;
 }
 
 /* Navigation bar styling up to navLink:hover */
@@ -126,3 +127,74 @@
   width: 100%; /* Ensure it spans the full width of the container */
   border-radius: 0 0 10px 10px; /* Rounded bottom corners for cohesion */
 }
+
+.page_homepageBackground__ezjLl {
+  background-image: url('/836923.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Align content to the top */
+  padding-top: 80px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.page_subheading__0VpgE {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.page_continentGrid__M9BRa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin-top: 60px; /* Adjust spacing from subheading */
+  padding: 50px 20px 20px;
+  margin: 0 auto;
+  
+}
+
+.page_continentCard__0Pye_ {
+  width: 15%;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page_continentCard__0Pye_:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.page_continentImage__N8XuO {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid #ff9900;
+  border-radius: 12px 12px 0 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.page_continentCard__0Pye_ h3 {
+  margin: 15px 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+
