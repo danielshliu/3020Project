@@ -1,4 +1,5 @@
 
+import test from 'node:test';
 import amadeus from '../lib/amadeus.js';
 
 
@@ -17,6 +18,9 @@ async function testAmadeus(){
         console.error('Error', error.response?.data || error.message);
     }
 }
+
+testAmadeus();
+
 
 async function searchFlightsHandler(){
     if(req.method !== "POST"){

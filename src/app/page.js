@@ -4,13 +4,13 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-
+import aboutuspage from './aboutus';
 import Homepage from "./homepage";
 import CountryPage from "./countries";
 import DestinationSelection from "./destinationSelection";
-import aboutUsPage from "./aboutus"
 
-// import { useRouter } from 'react';
+
+import { useRouter } from 'react';
 
 export default function Home() {
   return (
@@ -19,9 +19,9 @@ export default function Home() {
     // <CountryPage></CountryPage>
     
     <div> 
-      <aboutUsPage/>
-      {/* <Homepage/>
-      <DestinationSelection/> */}
+      <DestinationSelection/>
+      {/* <Homepage/> */}
     </div>
+
   );
 }

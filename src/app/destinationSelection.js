@@ -4,7 +4,19 @@
 import styles from "./page.module.css";
 import { useState } from 'react';
 
-export default function destinationSelection(){
+export async function getServerSideStuff(){
+    const res = await fetch('http://localhost:3001/api/saveBooking');
+    const data = await res.join();
+    return{
+        props:{
+            users:data.users,
+        },
+    };
+
+}
+
+
+export default function destinationSelection({ users }){
 
     const [origin, setOrigin] = useState('');
     const [destination, setDestination] = useState('');
@@ -63,6 +75,13 @@ export default function destinationSelection(){
 
 
             <h2>Availalbe Flights</h2>
+
+            <ul>
+                {users.map((user) => (
+                    <li key={user._id}>{user.name}</li>
+                ))}
+            </ul>
+
 
         </div>
     );
