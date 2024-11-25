@@ -1,8 +1,6 @@
-"use client";
-
 import styles from "./page.module.css";
 
-export default function aboutuspage(){
+export default function AboutUs(){
 
   return(
     <div className={styles.aboutUsBackground}>

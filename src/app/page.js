@@ -4,7 +4,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-import aboutuspage from './aboutus';
+import AboutUs from './aboutus';
 import Homepage from "./homepage";
 import Oceania from "./OceaniaCountries";
 import DestinationSelection from "./destinationSelection";
@@ -25,10 +25,10 @@ export default function Home() {
 
 
     <div> 
-      <Oceania></Oceania>
-      {/* <aboutuspage></aboutuspage> */}
+      {/* <Oceania></Oceania> */}
+      {/* <AboutUs></AboutUs> */}
     {/* <DestinationSelection/> */}
-      {/* <Homepage></Homepage> */}
+      <Homepage></Homepage>
       {/* <Argentina></Argentina> */}
       {/* <USA></USA> */}
       {/* <Canada></Canada> */}

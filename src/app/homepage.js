@@ -1,7 +1,16 @@
 
 import styles from "./page.module.css";
+import Link from 'react';
+
+import AboutUs from '/aboutus';
 
 export default function homepage(){
+
+    const Component = () = <a>AboutUs</a>
+
+
+
+
     return (
          <div className = {styles.homepageBackground}>
                 <nav className={styles.navbar}>
@@ -11,19 +20,19 @@ export default function homepage(){
            {/* Navigation links */}
         <ul className={styles.navLinks}>
           <li>
-            <a href="aboutus.js" className={styles.navLink}>
+            <Link href="aboutus.js" className={styles.navLink}>
               About Us
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="homepage.js" className={styles.navLink}>
+            <Link href="homepage.js" className={styles.navLink}>
               HomePage
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="countries.js" className={styles.navLink}>
+            <Link href="countries.js" className={styles.navLink}>
               Countries
-            </a>
+            </Link>
           </li>
           <li>
             <a href="contactUs.js" className={styles.navLink}>
@@ -40,57 +49,57 @@ export default function homepage(){
             <div className={styles.continentGrid}>
         {/* Africa */}
         <div className={styles.continentCard}>
-          <a href="/africa">
+          <Link href="/africa">
             
               <img src="/africa.jpg" alt="Africa" className={styles.continentImage} />
               <h3>Africa</h3>
-          </a>
+          </Link>
         </div>
 
         {/* Asia */}
         <div className={styles.continentCard}>
-          <a href="/asia">
+          <Link href="/asia">
               <img src="/asia1.png" alt="Asia" className={styles.continentImage} />
               <h3>Asia</h3>
-            </a>
+            </Link>
         </div>
 
         {/* Europe */}
         <div className={styles.continentCard}>
-          <a href="/europe">      
+          <Link href="/europe">      
               <img src="/europe.png" alt="Europe" className={styles.continentImage} />
               <h3>Europe</h3>
-            </a>
+            </Link>
         </div>
 
         {/* North America */}
         <div className={styles.continentCard}>
-          <a href="/north-america">
+          <Link href="/north-america">
               <img src="/northamerica.png" alt="North America" className={styles.continentImage} />
               <h3>North America</h3>
-            </a>
+            </Link>
         </div>
 
         {/* South America */}
         <div className={styles.continentCard}>
-          <a href="/south-america">
+          <Link href="/south-america">
               <img src="/southamerica.png" alt="South America" className={styles.continentImage} />
               <h3>South America</h3>
-            </a>
+            </Link>
         </div>
 
         {/* Oceania */}
         <div className={styles.continentCard}>
-          <a href="/oceania">
+          <Link href="/oceania">
               <img src="/oceania.jpg" alt="Oceania" className={styles.continentImage} />
               <h3>Oceania</h3>
-            </a>
+            </Link>
         </div>
       </div>
    
 
       <footer className = {styles.footer}>
-      <p>© 2024 WanderSphere. All rights reserved.</p>
+        <p>© 2024 WanderSphere. All rights reserved.</p>
       </footer>
       </div>
     );
