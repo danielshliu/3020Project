@@ -24,21 +24,6 @@
   padding-top: 20px; /* Optional: to add some padding from the top of the viewport */
 }
 
-/* Background for Oceania page */
-.OceaniaBackground {
-  background-image: url('/836923.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Align content to the top */
-  padding-top: 20px; /* Optional: to add some padding from the top of the viewport */
-}
-
 /* Heading styling */
 .heading {
   text-align: center;
@@ -125,19 +110,99 @@
   border-radius: 0 0 10px 10px; /* Rounded bottom corners for cohesion */
 }
 
-.homepageBackground {
-  background-image: url('/836923.jpg');
+.OceaniaBackground {
+  background-image: url('/OceaniaBackground.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh; /* Ensure it takes up the full viewport height */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Align content to the top */
-  padding-top: 80px;
-  padding-bottom: 50px;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 80px; /* Padding from the top */
+  padding-bottom: 50px; /* Optional: for additional bottom padding */
+  position: relative;
+}
+
+.AsiaBackground {
+  background-image: url('/AsiaBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh; /* Ensure it takes up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 80px; /* Padding from the top */
+  padding-bottom: 50px; /* Optional: for additional bottom padding */
+  position: relative;
+}
+
+.NorthAmericaBackground {
+  background-image: url('/NorthAmericaBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh; /* Ensure it takes up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 80px; /* Padding from the top */
+  padding-bottom: 50px; /* Optional: for additional bottom padding */
+  position: relative;
+}
+
+.EuropeBackground {
+  background-image: url('/EuropeBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh; /* Ensure it takes up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 80px; /* Padding from the top */
+  padding-bottom: 50px; /* Optional: for additional bottom padding */
+  position: relative;
+}
+
+.AfricaBackground {
+  background-image: url('/AfricaBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh; /* Ensure it takes up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 80px; /* Padding from the top */
+  padding-bottom: 50px; /* Optional: for additional bottom padding */
+  position: relative;
+}
+
+.SouthAmericaBackground {
+  background-image: url('/SouthAmericaBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh; /* Ensure it takes up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 80px; /* Padding from the top */
+  padding-bottom: 50px; /* Optional: for additional bottom padding */
   position: relative;
 }
 
@@ -254,8 +319,64 @@
   line-height: 1.5;
 }
 
+/* Country Display Styling */
+.countryDisplay {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal sections */
+  gap: 40px; /* Larger spacing between options */
+  max-width: 90%; /* Fit within navbar width */
+  margin: 0 auto;
+  padding: 10px;
+  align-items: center; /* Align items vertically */
+  height: 100%; /* Take full height of navbar */
+}
 
+/* Individual Country Card Styling */
+.countryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 15px; /* More rounded corners for cards */
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent dark background */
+  color: white; /* Ensure text is visible */
+  height: 90%; /* Fit neatly within grid cell */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  font-weight: bold;
+}
 
+/* Flag Image Styling */
+.countryCard img {
+  width: 85%; /* Adjust flag size */
+  max-width: 220px; /* Prevent flags from being too large */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Slight rounding for flags */
+  margin-bottom: 10px; /* Space below the flag */
+}
 
+/* Button Styling */
+.countryCard button {
+  font-size: 1.1rem; /* Slightly larger button text */
+  padding: 10px 20px; /* Bigger button size */
+  background-color: #007bff; /* Bright button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
+.countryCard button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
 
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .countryDisplay {
+    grid-template-columns: repeat(1, 1fr); /* Stack items vertically */
+    gap: 20px; /* Reduce gap for smaller screens */
+  }
+}

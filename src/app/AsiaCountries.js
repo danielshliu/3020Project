@@ -3,8 +3,8 @@ import styles from "./page.module.css";
 export default function countries(){
 
     return(
-        <div className={styles.OceaniaBackground}>
-      <h1 className={styles.heading}>Oceania</h1>
+        <div className={styles.AsiaBackground}>
+      <h1 className={styles.heading}>Asia</h1>
       <nav className={styles.navbar}>
         {/* Logo aligned to the left */}
         <label className={styles.logo}>WanderSphere</label>
@@ -34,35 +34,40 @@ export default function countries(){
           </ul>
         </nav>
 
-        <div style={{ display: 'flex', justifyContent: 'space-around', padding: '20px' }}>
-      {/* Australia Flag */}
-      <div style={{ textAlign: 'center', flex: 1 }}>
-        <img 
-          src="/AustraliaFlag.png" 
-          alt="Australia Flag" 
-          style={{
-            width: '40%',  // Adjust width to be 60% of the container's width
-            height: 'auto', 
-            marginBottom: '10px',
-          }} 
+        <div className={styles.countryDisplay}>
+      {/* Japan */}
+      <div className={styles.countryCard}>
+        <img
+          src="/JapanFlag.png"
+          alt="Japan Flag"
+          style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
-        <h3>Australia (Commonwealth of Australia)</h3>
-        <button 
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#007BFF',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            fontSize: '16px',
-          }}
-        >
-          Learn More
-        </button>
-      </div>
+        <p>Japan | 日本</p>
+        <button>Learn More</button>
       </div>
 
+      {/* South Korea */}
+      <div className={styles.countryCard}>
+        <img
+          src="/SouthKoreaFlag.png"
+          alt="South Korea Flag"
+          style={{ width: "100%", maxWidth: "200px", height: "auto" }}
+        />
+        <p>South Korea | 대한민국</p>
+        <button>Learn More</button>
+      </div>
+
+      {/* Taiwan */}
+      <div className={styles.countryCard}>
+        <img
+          src="/TaiwanFlag.png"
+          alt="Taiwan Flag"
+          style={{ width: "100%", maxWidth: "200px", height: "auto" }}
+        />
+        <p>Taiwan | 中華民國</p>
+        <button>Learn More</button>
+      </div>
+    </div>
 
         <div className={styles.selectDestinationMessageBox}>
         <h2>Select a destination.</h2>

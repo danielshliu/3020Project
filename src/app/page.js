@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 
 import aboutuspage from './aboutus';
 import Homepage from "./homepage";
-import CountryPage from "./countries";
+import Oceania from "./OceaniaCountries";
 import DestinationSelection from "./destinationSelection";
 import Argentina from "./argentina";
 import USA from "./usa";
@@ -25,6 +25,7 @@ export default function Home() {
 
 
     <div> 
+      <Oceania></Oceania>
       {/* <aboutuspage></aboutuspage> */}
     {/* <DestinationSelection/> */}
       {/* <Homepage></Homepage> */}
