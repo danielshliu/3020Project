@@ -25,10 +25,9 @@ export default function Home() {
 
 
     <div> 
-      {/* <Oceania></Oceania> */}
+      {/* <Oceania></Oceania> *}
       {/* <AboutUs></AboutUs> */}
     {/* <DestinationSelection/> */}
-      <Homepage></Homepage>
       {/* <Argentina></Argentina> */}
       {/* <USA></USA> */}
       {/* <Canada></Canada> */}
