@@ -1,33 +1,36 @@
 import styles from "./page.module.css";
 
-export default function countries(){
+export default function NorthAmerica(props){
 
-    return(
-        <div className={styles.NorthAmericaBackground}>
+  return(
+    <div className={styles.NorthAmericaBackground}>
       <h1 className={styles.heading}>North America</h1>
-      <nav className={styles.navbar}>
-        {/* Logo aligned to the left */}
-        <label className={styles.logo}>WanderSphere</label>
-  
-           {/* Navigation links */}
-        <ul className={styles.navLinks}>
+        <nav className={styles.navbar}>
+          {/* Logo aligned to the left */}
+          <label className={styles.logo}>WanderSphere</label>
+
+          {/* Navigation links */}
+          <ul className={styles.navLinks}>
+        
           <li>
-            <a href="homepage.js" className={styles.navLink}>
-              About Us
+            <a onClick={() => props.setPage(2)} className={styles.navLink}>
+              About us
             </a>
+          
           </li>
+          
           <li>
-            <a href="homepage.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(1)} className={styles.navLink}>
               HomePage
             </a>
           </li>
           <li>
-            <a href="countries.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(3)} className={styles.navLink}>
               Countries
             </a>
           </li>
           <li>
-            <a href="contactUs.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(4)} className={styles.navLink}>
               Contact Us
             </a>
           </li>
@@ -43,7 +46,7 @@ export default function countries(){
           style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
         <p>Canada</p>
-        <button>Learn More</button>
+        <button onClick={() => props.setPage(20)} >Learn More</button>
       </div>
 
       {/* Mexico */}
@@ -54,7 +57,7 @@ export default function countries(){
           style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
         <p>Mexico | Estados Unidos Mexicanos</p>
-        <button>Learn More</button>
+        <button onClick={() => props.setPage(21)} >Learn More</button>
       </div>
 
       {/* United States of America */}
@@ -65,7 +68,7 @@ export default function countries(){
           style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
         <p>United States of America</p>
-        <button>Learn More</button>
+        <button onClick={() => props.setPage(22)} >Learn More</button>
       </div>
     </div>
 

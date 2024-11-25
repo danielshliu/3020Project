@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 
-export default function AboutUs(){
+export default function AboutUs(props){
 
   return(
     <div className={styles.aboutUsBackground}>
@@ -13,22 +13,22 @@ export default function AboutUs(){
           {/* Navigation links */}
         <ul className={styles.navLinks}>
           <li>
-            <a href="homepage.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(2)} className={styles.navLink}>
               About Us
             </a>
           </li>
           <li>
-            <a href="homepage.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(1)} className={styles.navLink}>
               HomePage
             </a>
           </li>
           <li>
-            <a href="countries.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(3)} className={styles.navLink}>
               Countries
             </a>
           </li>
           <li>
-            <a href="contactUs.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(4)} className={styles.navLink}>
               Contact Us
             </a>
           </li>

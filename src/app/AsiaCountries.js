@@ -1,33 +1,36 @@
 import styles from "./page.module.css";
 
-export default function countries(){
+export default function Asia(props){
 
     return(
         <div className={styles.AsiaBackground}>
       <h1 className={styles.heading}>Asia</h1>
       <nav className={styles.navbar}>
-        {/* Logo aligned to the left */}
-        <label className={styles.logo}>WanderSphere</label>
-  
-           {/* Navigation links */}
-        <ul className={styles.navLinks}>
+          {/* Logo aligned to the left */}
+          <label className={styles.logo}>WanderSphere</label>
+
+          {/* Navigation links */}
+          <ul className={styles.navLinks}>
+        
           <li>
-            <a href="homepage.js" className={styles.navLink}>
-              About Us
+            <a onClick={() => props.setPage(2)} className={styles.navLink}>
+              About us
             </a>
+          
           </li>
+          
           <li>
-            <a href="homepage.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(1)} className={styles.navLink}>
               HomePage
             </a>
           </li>
           <li>
-            <a href="countries.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(3)} className={styles.navLink}>
               Countries
             </a>
           </li>
           <li>
-            <a href="contactUs.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(4)} className={styles.navLink}>
               Contact Us
             </a>
           </li>
@@ -43,7 +46,7 @@ export default function countries(){
           style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
         <p>Japan | 日本</p>
-        <button>Learn More</button>
+        <button onClick={() => props.setPage(14)} >Learn More</button>
       </div>
 
       {/* South Korea */}
@@ -54,7 +57,7 @@ export default function countries(){
           style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
         <p>South Korea | 대한민국</p>
-        <button>Learn More</button>
+        <button onClick={() => props.setPage(15)} >Learn More</button>
       </div>
 
       {/* Taiwan */}
@@ -65,7 +68,7 @@ export default function countries(){
           style={{ width: "100%", maxWidth: "200px", height: "auto" }}
         />
         <p>Taiwan | 中華民國</p>
-        <button>Learn More</button>
+        <button onClick={() => props.setPage(16)} >Learn More</button>
       </div>
     </div>
 

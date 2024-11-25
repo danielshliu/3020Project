@@ -1,36 +1,39 @@
-import styles from "../../page.module.css";
+import styles from "./page.module.css";
 
 export default function Brazil() {
-    return (
-        <div className={styles.cityBackground}>
-             <nav className={styles.navbar}>
-        {/* Logo aligned to the left */}
-        <label className={styles.logo}>WanderSphere</label>
-  
-           {/* Navigation links */}
-        <ul className={styles.navLinks}>
+  return (
+    <div className={styles.cityBackground}>
+      <nav className={styles.navbar}>
+          {/* Logo aligned to the left */}
+          <label className={styles.logo}>WanderSphere</label>
+
+          {/* Navigation links */}
+          <ul className={styles.navLinks}>
+        
           <li>
-            <a href="aboutus.js" className={styles.navLink}>
-              About Us
+            <a onClick={() => props.setPage(2)} className={styles.navLink}>
+              About us
             </a>
+          
           </li>
+          
           <li>
-            <a href="homepage.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(1)} className={styles.navLink}>
               HomePage
             </a>
           </li>
           <li>
-            <a href="countries.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(3)} className={styles.navLink}>
               Countries
             </a>
           </li>
           <li>
-            <a href="contactUs.js" className={styles.navLink}>
+            <a onClick={() => props.setPage(4)} className={styles.navLink}>
               Contact Us
             </a>
           </li>
           </ul>
-        </nav>
+      </nav>
             <h1 className={styles.heading}>Brazil</h1>
             <div className={styles.cityGrid}>
                 <div className={styles.cityCard}>
