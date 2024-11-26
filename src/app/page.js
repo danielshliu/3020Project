@@ -17,7 +17,7 @@ import { useRouter } from 'react';
 
 export default function Home() {
   return (
-
+    //Comment this out if you want to just render the page your working on
     <Body/>
     
     // This is a rendering page so don't touch it

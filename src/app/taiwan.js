@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 
-export default function Taiwan() {
+export default function Taiwan(props) {
     return (
         <div className={styles.cityBackground}>
           <nav className={styles.navbar}>

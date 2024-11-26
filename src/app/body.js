@@ -33,6 +33,9 @@ import Australia from "./australia";
 import FrenchPolynesia from "./frenchpolynesia";
 import NewZealand from "./newzealand";
 
+import destinationSelection from "./destinationSelection";
+
+
 import { useState } from 'react';
 
 export default function Body(){
@@ -114,7 +117,7 @@ export default function Body(){
             component = <Brazil setPage={setPage}/>
             break;
         case 25:
-            component = <Chhile setPage={setPage}/>
+            component = <Chile setPage={setPage}/>
             break;
         case 26:
             component = <Australia setPage={setPage}/>
@@ -125,7 +128,8 @@ export default function Body(){
         case 28:
             component = <NewZealand setPage={setPage}/>
             break;
-
+        case 29:
+            component = <destinationSelection setPage={setPage}/>
 
 
 
