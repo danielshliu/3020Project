@@ -1,41 +1,12 @@
+import Navigation from "./nav";
 import styles from "./page.module.css";
 
 export default function Asia(props){
 
-    return(
-        <div className={styles.AsiaBackground}>
+  return(
+    <div className={styles.AsiaBackground}>
       <h1 className={styles.heading}>Asia</h1>
-      <nav className={styles.navbar}>
-          {/* Logo aligned to the left */}
-          <label className={styles.logo}>WanderSphere</label>
-
-          {/* Navigation links */}
-          <ul className={styles.navLinks}>
-        
-          <li>
-            <a onClick={() => props.setPage(2)} className={styles.navLink}>
-              About us
-            </a>
-          
-          </li>
-          
-          <li>
-            <a onClick={() => props.setPage(1)} className={styles.navLink}>
-              HomePage
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(3)} className={styles.navLink}>
-              Countries
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(4)} className={styles.navLink}>
-              Contact Us
-            </a>
-          </li>
-          </ul>
-        </nav>
+      <Navigation setPage={props.setPage}/>
 
         <div className={styles.countryDisplay}>
       {/* Japan */}
@@ -70,7 +41,7 @@ export default function Asia(props){
         <p>Taiwan | 中華民國</p>
         <button onClick={() => props.setPage(16)} >Learn More</button>
       </div>
-    </div>
+      </div>
 
         <div className={styles.selectDestinationMessageBox}>
         <h2>Select a destination.</h2>
@@ -80,7 +51,7 @@ export default function Asia(props){
       <footer className={styles.footer}>
         <p>© 2024 WanderSphere. All rights reserved.</p>
       </footer>
-        </div>
-    );
+    </div>
+  );
 
 }

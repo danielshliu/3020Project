@@ -33,8 +33,8 @@ import Australia from "./australia";
 import FrenchPolynesia from "./frenchpolynesia";
 import NewZealand from "./newzealand";
 
-import destinationSelection from "./destinationSelection";
-
+import DestinationSelection from "./destinationSelection";
+import Navigation from "./nav";
 
 import { useState } from 'react';
 
@@ -129,9 +129,9 @@ export default function Body(){
             component = <NewZealand setPage={setPage}/>
             break;
         case 29:
-            component = <destinationSelection setPage={setPage}/>
-
-
+            component = <DestinationSelection setPage={setPage}/>
+            break;
+        
 
 
 

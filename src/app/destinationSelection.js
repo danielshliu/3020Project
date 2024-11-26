@@ -3,12 +3,14 @@
 
 import styles from "./page.module.css";
 import { useState } from 'react';
+import Navigation from "./nav";
+
 
 export async function getServerSideStuff(){
     const res = await fetch('http://localhost:3001/api/saveBooking');
     const data = await res.join();
     return{
-        props:{
+        userProps:{
             users:data.users,
         },
     };
@@ -16,7 +18,7 @@ export async function getServerSideStuff(){
 }
 
 
-export default function destinationSelection({ users }){
+export default function DestinationSelection(props, {users}){
 
     const [origin, setOrigin] = useState('');
     const [destination, setDestination] = useState('');
@@ -45,7 +47,8 @@ export default function destinationSelection({ users }){
     };
 
     return(
-        <div>
+        <div className={styles.cityBackground}>
+          <Navigation setPage={props.setPage}/>
             <h1>Search Flights</h1>
             <form onSubmit={(e) => e.preventDefault()}>
                 <input
@@ -67,7 +70,7 @@ export default function destinationSelection({ users }){
                     onChange={(e) => setDate(e.target.value)} 
                 />   
 
-                <button onClick={handleSearch}></button>
+                <button onClick={handleSearch}>Search </button>
 
                 
             </form>
@@ -77,13 +80,13 @@ export default function destinationSelection({ users }){
             <h2>Availalbe Flights</h2>
 
             <ul>
-                {users.map((user) => (
+                {/* {users.map((user) => (
                     <li key={user._id}>{user.name}</li>
-                ))}
+                ))} */}
             </ul>
-
-
+            <footer className = {styles.footer}>
+                <p>© 2024 WanderSphere. All rights reserved.</p>
+            </footer>
         </div>
     );
-
 }

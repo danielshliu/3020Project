@@ -1,41 +1,12 @@
 import styles from "./page.module.css";
+import Navigation from "./nav";
 
 export default function NorthAmerica(props){
 
   return(
     <div className={styles.NorthAmericaBackground}>
       <h1 className={styles.heading}>North America</h1>
-        <nav className={styles.navbar}>
-          {/* Logo aligned to the left */}
-          <label className={styles.logo}>WanderSphere</label>
-
-          {/* Navigation links */}
-          <ul className={styles.navLinks}>
-        
-          <li>
-            <a onClick={() => props.setPage(2)} className={styles.navLink}>
-              About us
-            </a>
-          
-          </li>
-          
-          <li>
-            <a onClick={() => props.setPage(1)} className={styles.navLink}>
-              HomePage
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(3)} className={styles.navLink}>
-              Countries
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(4)} className={styles.navLink}>
-              Contact Us
-            </a>
-          </li>
-          </ul>
-        </nav>
+      <Navigation setPage={props.setPage}/>
 
         <div className={styles.countryDisplay}>
       {/* Canada */}

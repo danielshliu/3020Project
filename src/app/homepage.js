@@ -1,7 +1,7 @@
 
 import styles from "./page.module.css";
 import Link from 'next/link';
-
+import Navigation from "./nav";
 
 
 
@@ -12,37 +12,9 @@ export default function homepage(props){
 
   return (
       <div className = {styles.homepageBackground}>
-        <nav className={styles.navbar}>
-          {/* Logo aligned to the left */}
-          <label className={styles.logo}>WanderSphere</label>
-
-          {/* Navigation links */}
-          <ul className={styles.navLinks}>
         
-          <li>
-            <a onClick={() => props.setPage(2)} className={styles.navLink}>
-              About us
-            </a>
-          
-          </li>
-          
-          <li>
-            <a onClick={() => props.setPage(1)} className={styles.navLink}>
-              HomePage
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(3)} className={styles.navLink}>
-              Countries
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(4)} className={styles.navLink}>
-              Contact Us
-            </a>
-          </li>
-          </ul>
-        </nav>
+        <Navigation setPage={props.setPage}/>
+
           <h1 className = {styles.heading}>Travel the World with WanderSphere!</h1>
           <p className = {styles.subheading}>
               Click on a continent to start your adventure!
@@ -51,7 +23,7 @@ export default function homepage(props){
           <div className={styles.continentGrid}>
       {/* Africa */}
       <div className={styles.continentCard}>
-        <a onClick={() => props.setPage(5)}>
+        <a onClick={() => props.setPage(30)}>
           
             <img src="/africa.jpg" alt="Africa" className={styles.continentImage} />
             <h3>Africa</h3>
