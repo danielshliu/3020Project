@@ -1,13 +1,18 @@
 import styles from "./page.module.css";
-import Link from 'next/link';
 import Navigation from "./nav";
 
 export default function CountriesList(props) {
+
     return (
         <div className={styles.countriesListBackground}>
             <h1 className={styles.heading}>Countries</h1>
+
             <Navigation setPage={props.setPage} />
-            <div className={styles.selectDestinationMessageBox}><h2>Select a destination.</h2></div>
+
+            <div className={styles.selectDestinationMessageBox}>
+                <h2>Select a destination.</h2>
+            </div>
+
             <div className={styles.countryDisplay}>
 
                 {/* Argentina */}

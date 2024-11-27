@@ -1,7 +1,8 @@
 import Homepage from "./homepage";
 import AboutUs from "./aboutus";
-import CountriesListing from "./countriesListing";
+import CountriesList from "./countriesListing";
 import ContactUs from "./contactUs"; 
+
 import Africa from "./AfricaCountries";
 import Asia from "./AsiaCountries";
 import Europe from "./EuropeCountries";
@@ -34,12 +35,14 @@ import FrenchPolynesia from "./frenchpolynesia";
 import NewZealand from "./newzealand";
 
 import DestinationSelection from "./destinationSelection";
-import Navigation from "./nav";
+
 
 import { useState } from 'react';
+import Home from "./page";
 
 export default function Body(){
     const[page , setPage] = useState(1);
+    const[selectedCity, setSelectedCity] = useState(null);
     
     let component;
 
@@ -51,7 +54,7 @@ export default function Body(){
             component = <AboutUs setPage={setPage}/>
             break;
         case 3:
-            component = <CountriesListing setPage={setPage}/>
+            component = <CountriesList setPage={setPage}/>
             break;
         case 4:
             component = <ContactUs setPage={setPage}/>
@@ -75,64 +78,63 @@ export default function Body(){
             component = <Oceania setPage={setPage}/>
             break;
         case 11:
-            component = <Egypt setPage={setPage}/>
+            component = <Egypt setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 12:
-            component = <Seychelles setPage={setPage}/>
+            component = <Seychelles setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 13:
-            component = <SouthAfrica setPage={setPage}/>
+            component = <SouthAfrica setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 14:
-            component = <Japan setPage={setPage}/>
+            component = <Japan setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 15:
-            component = <Korea setPage={setPage}/>
+            component = <Korea setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 16:
-            component= <Taiwan setPage={setPage}/>
+            component= <Taiwan setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 17:
-            component = <Italy setPage={setPage}/>
+            component = <Italy setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 18:
-            component = <Sweden setPage={setPage}/>
+            component = <Sweden setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 19:
-            component = <Switzerland setPage={setPage}/>
+            component = <Switzerland setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 20:
-            component = <Canada setPage={setPage}/>
+            component = <Canada setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 21:
-            component = <Mexico setPage={setPage}/>
+            component = <Mexico setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 22:
-            component = <USA setPage={setPage}/>
+            component = <USA setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 23:
-            component = <Argentina setPage={setPage}/>
+            component = <Argentina setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 24:
-            component = <Brazil setPage={setPage}/>
+            component = <Brazil setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 25:
-            component = <Chile setPage={setPage}/>
+            component = <Chile setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 26:
-            component = <Australia setPage={setPage}/>
+            component = <Australia setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 27:
-            component = <FrenchPolynesia setPage={setPage}/>
+            component = <FrenchPolynesia setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 28:
-            component = <NewZealand setPage={setPage}/>
+            component = <NewZealand setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 29:
-            component = <DestinationSelection setPage={setPage}/>
+            component = <DestinationSelection setPage={setPage} city={selectedCity}/>
             break;
         
-
 
 
 

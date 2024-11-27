@@ -18,38 +18,59 @@ export async function getServerSideStuff(){
 }
 
 
-export default function DestinationSelection(props, {users}){
+export default function DestinationSelection(props){
 
     const [origin, setOrigin] = useState('');
-    const [destination, setDestination] = useState('');
     const [date, setDate] = useState('');
+    
+
     const [flights, setFlights] = useState([]);
+    const [hotels, setHotel] = useState([]);
 
-    const handleSearch = async() => {
-        try{
-            const response = await fetch('./api/searchFlights', {
-                method : 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({origin, destination, departureDate: date})
-            });
+    const destination = props.city;
+    const handleSearch = async(e) => {
+        e.preventDefault();
 
-            const data = await response.json();
+        const flightResponse = await fetch('./api/searchFlights', {
+            method : 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                origin, 
+                destination,
+                departureDate: date
+            }),
+        });
 
-            if (data.success){
-                setFlights(data.flights);
-            }else{
-                console.error(data.error)
-            }
+        const hotelResposne = await fetch('./api/searchHotels', {
+            method : 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({city: destination})
+            
+        });
 
-        }catch{
-            console.error('Error fetching flights');
+
+        
+        const flightData = await flightResponse.json();
+        const hotelData = await hotelResposne.json();
+
+
+        if (flightData.ok && hotelData.ok){
+            setFlights(flightData.flights);
+            setHotel(hotelData.hotels);
+        }else{
+            console.error(data.error)
         }
+
     };
 
+  
     return(
         <div className={styles.cityBackground}>
           <Navigation setPage={props.setPage}/>
-            <h1>Search Flights</h1>
+
+
+            <h1>Flights for: {props.city}</h1>
+        
             <form onSubmit={(e) => e.preventDefault()}>
                 <input
                     type="text"
@@ -57,20 +78,14 @@ export default function DestinationSelection(props, {users}){
                     value = {origin}
                     onChange={(e) => setOrigin(e.target.value)} 
                 />   
-                <input
-                    type="text"
-                    placeholder="Destination"
-                    value = {destination}
-                    onChange={(e) => setDestination(e.target.value)} 
-                />   
+               
                 <input
                     type="date"
-                    placeholder={date}
-                    value = {origin}
+                    value = {date}
                     onChange={(e) => setDate(e.target.value)} 
                 />   
 
-                <button onClick={handleSearch}>Search </button>
+                <button type="submit" onClick={handleSearch}>Search </button>
 
                 
             </form>
@@ -80,10 +95,15 @@ export default function DestinationSelection(props, {users}){
             <h2>Availalbe Flights</h2>
 
             <ul>
-                {/* {users.map((user) => (
-                    <li key={user._id}>{user.name}</li>
-                ))} */}
+                {flights.map((flight, index) => (
+                    <li key={index}>
+                        {flight.price} CAD |{flight.origin} | {flight.destination}
+
+                    </li>
+                ))}
             </ul>
+
+            <h2>Availalbe Hotels</h2>
             <footer className = {styles.footer}>
                 <p>© 2024 WanderSphere. All rights reserved.</p>
             </footer>

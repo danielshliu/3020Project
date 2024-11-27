@@ -10,6 +10,7 @@ export default function Africa(props){
       <Navigation setPage={props.setPage}/>
 
       <div className={styles.countryDisplay}>
+
         {/* Egypt */}
         <div className={styles.countryCard}>
           <img
@@ -19,10 +20,12 @@ export default function Africa(props){
           />
           <p>Egypt | جمهورية مصر العربية</p>
           <button onClick={() => props.setPage(11)} >Learn More</button>
+
         </div>
 
         {/* Seychelles */}
         <div className={styles.countryCard}>
+
           <img
             src="/SeychellesFlag.png"
             alt="Seychelles Flag"
@@ -30,10 +33,12 @@ export default function Africa(props){
           />
           <p>Seychelles | République des Seychelles, Repiblik Sesel</p>
           <button onClick={() => props.setPage(12)} > Learn More</button>
+
         </div>
 
         {/* South Africa */}
         <div className={styles.countryCard}>
+
           <img
             src="/SouthAfricaFlag.png"
             alt="South Africa Flag"
@@ -42,6 +47,7 @@ export default function Africa(props){
           <p>South Africa</p>
           <button onClick={() => props.setPage(13)} >Learn More</button>
         </div>
+
       </div>
 
       <div className={styles.selectDestinationMessageBox}>

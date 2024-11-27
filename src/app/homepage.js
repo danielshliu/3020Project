@@ -6,13 +6,9 @@ import Navigation from "./nav";
 
 
 export default function homepage(props){
- 
-
-
-
   return (
       <div className = {styles.homepageBackground}>
-        
+
         <Navigation setPage={props.setPage}/>
 
           <h1 className = {styles.heading}>Travel the World with WanderSphere!</h1>
@@ -22,8 +18,9 @@ export default function homepage(props){
 
           <div className={styles.continentGrid}>
       {/* Africa */}
+
       <div className={styles.continentCard}>
-        <a onClick={() => props.setPage(30)}>
+        <a onClick={() => props.setPage(5)}>
           
             <img src="/africa.jpg" alt="Africa" className={styles.continentImage} />
             <h3>Africa</h3>

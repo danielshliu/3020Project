@@ -9,21 +9,30 @@ export default function Egypt(props) {
             <h1 className={styles.heading}>Egypt</h1>
             <div className={styles.cityGrid}>
                 <div 
-                  onClick={() => props.setPage(29)}
+                  onClick={() => {
+                    props.setSelectedCity("Cario")
+                    props.setPage(29)
+                  }}
                   className={styles.cityCard}>
                   <img src="/cairo.jpg" alt="Cairo" className={styles.cityImage} />
                   <h3>Cairo</h3>
                   <p>Home to the famous Pyramids of Giza.</p>
                 </div>
                 <div 
-                  onClick={() => props.setPage(29)}
+                 onClick={() => {
+                  props.setSelectedCity("Alexandria")
+                  props.setPage(29)
+                }}
                   className={styles.cityCard}>
                   <img src="/alexandria.jpg" alt="Alexandria" className={styles.cityImage} />
                   <h3>Alexandria</h3>
                   <p>Known for its Mediterranean coastline and ancient history.</p>
                 </div>
                 <div 
-                  onClick={() => props.setPage(29)}
+                  onClick={() => {
+                    props.setSelectedCity("Luxor")
+                    props.setPage(29)
+                  }}
                   className={styles.cityCard}>
                   <img src="/luxor.jpg" alt="Luxor" className={styles.cityImage} />
                   <h3>Luxor</h3>

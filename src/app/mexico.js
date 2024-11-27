@@ -1,4 +1,6 @@
 import styles from "./page.module.css";
+import Navigation from "./nav";
+
 
 export default function Mexico(props) {
     return (
@@ -7,21 +9,30 @@ export default function Mexico(props) {
             <h1 className={styles.heading}>Mexico</h1>
             <div className={styles.cityGrid}>
                 <div 
-                  onClick={() => props.setPage(29)}
+                  onClick={() => {
+                    props.setSelectedCity("Mexico City")
+                    props.setPage(29)
+                  }}
                   className={styles.cityCard}>
                   <img src="/mexicocity.jpg" alt="Mexico City" className={styles.cityImage} />
                   <h3>Mexico City</h3>
                   <p>The capital city, known for its vibrant culture, history, and delicious cuisine.</p>
                 </div>
                 <div 
-                  onClick={() => props.setPage(29)}
+                  onClick={() => {
+                    props.setSelectedCity("Guadalajara")
+                    props.setPage(29)
+                  }}
                   className={styles.cityCard}>
                   <img src="/guadalajara.jpg" alt="Guadalajara" className={styles.cityImage} />
                   <h3>Guadalajara</h3>
                   <p>Known for its mariachi music, tequila, and historic architecture.</p>
                 </div>
                 <div 
-                  onClick={() => props.setPage(29)}
+                  onClick={() => {
+                    props.setSelectedCity("Cancun")
+                    props.setPage(29)
+                  }}
                   className={styles.cityCard}>
                   <img src="/cancun.jpg" alt="Cancun" className={styles.cityImage} />
                   <h3>Cancun</h3>

@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Navigation from "./nav";
 
 export default function Sweden(props) {
   return (
@@ -7,21 +8,30 @@ export default function Sweden(props) {
       <h1 className={styles.heading}>Sweden</h1>
       <div className={styles.cityGrid}>
         <div 
-          onClick={() => props.setPage(29)}
+          onClick={() => {
+            props.setSelectedCity("Stockholm")
+            props.setPage(29)
+          }}
           className={styles.cityCard}>
           <img src="/stockholm.jpg" alt="Stockholm" className={styles.cityImage} />
           <h3>Stockholm</h3>
           <p>The capital city known for its beautiful architecture and modern design.</p>
         </div>
         <div 
-          onClick={() => props.setPage(29)}
+          onClick={() => {
+            props.setSelectedCity("Gothenburg")
+            props.setPage(29)
+          }}
           className={styles.cityCard}>
           <img src="/gothenburg.jpg" alt="Gothenburg" className={styles.cityImage} />
           <h3>Gothenburg</h3>
           <p>Second largest city in Sweden, famous for its lush green parks and vibrant cultural life.</p>
         </div>
         <div 
-          onClick={() => props.setPage(29)}
+          onClick={() => {
+            props.setSelectedCity("Malmo")
+            props.setPage(29)
+          }}
           className={styles.cityCard}>
           <img src="/malmo.jpg" alt="Malmo" className={styles.cityImage} />
           <h3>Malmo</h3>
