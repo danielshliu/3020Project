@@ -13,12 +13,13 @@ import Canada from "./canada";
 import Body from "./body";
 import CountriesList from "./countriesListing";
 import { useRouter } from 'react';
+import Australia from "./australia";
 
 
 export default function Home() {
   return (
     //Comment this out if you want to just render the page your working on
-    <Body/>
+     <Body/>
       
     // <CountriesList></CountriesList>
     // This is a rendering page so don't touch it
@@ -31,6 +32,8 @@ export default function Home() {
     //   {/* <Argentina></Argentina> */}
     //   {/* <USA></USA> */}
     //   {/* <Canada></Canada> */}
+      
+      // <Australia></Australia>
 
   );
 }
