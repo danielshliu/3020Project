@@ -53,13 +53,9 @@ export default function DestinationSelection(props){
         const flightData = await flightResponse.json();
         const hotelData = await hotelResposne.json();
 
-
-        if (flightData.ok && hotelData.ok){
-            setFlights(flightData.flights);
-            setHotel(hotelData.hotels);
-        }else{
-            console.error(data.error)
-        }
+        setFlights(flightData.flights);
+        setHotel(hotelData.hotels);
+       
 
     };
 
