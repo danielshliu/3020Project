@@ -413,3 +413,120 @@
   }
 }
 
+/*Summary Page*/
+/* Add some margin to push the entire grid down */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 equal columns */
+  grid-template-rows: auto auto auto; /* Rows for both left and right sections */
+  gap: 20px; /* Space between boxes */
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  margin-top: 20px; /* This will add a small gap between the navigation bar and the content */
+}
+
+/* Specific background for About Us page */
+.summaryBackground {
+  background-image: url('/summaryBackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top instead of center */
+  padding-top: 40px; /* Reduced padding from the top */
+  padding-bottom: 30px; /* Reduced bottom padding */
+  position: relative;
+}
+
+/* Adjust the left column with larger boxes */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flightBooking, .hotelBooking {
+  background-color: #f4f4f4;
+  padding: 30px; /* Increased padding for larger boxes */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: 300px; /* Increased height for flightBooking and hotelBooking */
+}
+
+.flightBooking {
+  flex-grow: 1; /* Ensures flightBooking takes up remaining vertical space */
+}
+
+.hotelBooking {
+  flex-grow: 1; /* Ensures hotelBooking takes up remaining vertical space */
+}
+
+/* Adjust the right column with slightly larger boxes */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paymentMethod, .summaryInformation, .confirmationDesicion {
+  background-color: #f4f4f4;
+  padding: 30px; /* Increased padding for larger boxes */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: 220px; /* Slightly increased height for paymentMethod, summaryInformation, confirmationDesicion */
+}
+
+/* Styling for the "Confirm" button */
+.confirmButton {
+  position: absolute;
+  bottom: 20px; /* Position button at the bottom of the box */
+  right: 20px; /* Position button on the right side */
+  padding: 12px 24px; /* Button size */
+  background-color: #28a745; /* Green color */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirmButton:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+/* Ensure flightBooking, hotelBooking, and confirmationDesicion have relative positioning 
+   to correctly position the button inside the box */
+.flightBooking, .hotelBooking, .confirmationDesicion {
+  position: relative; /* Needed to position the button inside the box */
+}
+
+/* Optional: Styling for the text inside the button */
+.confirmButton:focus {
+  outline: none; /* Remove outline on focus for a cleaner look */
+}
+
+/* Styling for the input fields */
+.paymentMethod input[type="text"], .paymentMethod input[type="number"], .paymentMethod input[type="password"] {
+  width: 100%;
+  padding: 6px; /* Reduced padding */
+  margin-bottom: 8px; /* Reduced margin */
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Slightly smaller border radius */
+  font-size: 0.85rem; /* Smaller font size */
+  background-color: #fff;
+}
+
+/* Styling for the payment method form fields */
+.payment-method-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced space between inputs */
+}

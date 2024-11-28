@@ -32,7 +32,7 @@ export default function Australia(props) {
                     props.setSelectedCity("Brisbane")
                     props.setPage(29)
                   }}
-                  lassName={styles.cityCard}>
+                  className={styles.cityCard}>
                   <img src="/brisbane.jpg" alt="Brisbane" className={styles.cityImage} />
                   <h3>Brisbane</h3>
                   <p>A sunny city known for its outdoor lifestyle and nearby beaches.</p>
