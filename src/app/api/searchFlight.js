@@ -9,6 +9,8 @@ async function testAmadeus(req, res){
         const destination = 'LAX';
         const date = '2024-12-01';
 
+    
+
         const response = await amadeus.shopping.flightOffersSearch.get({
             originLocationCode: origin,
             destinationLocationCode: destination,
@@ -50,6 +52,7 @@ async function testAmadeus(req, res){
 }
 
 
+
 async function deleteAllFlight() {
     try {
       const client = await clientPromise;
@@ -80,7 +83,7 @@ export default async function searchFlightsHandler(req, res){
                 destinationLocationCode: destination,
                 departureDate,
                 adults: 1,
-                max: 1,
+                max: 10,
             });
             
             const flightsData = flightOffers.data.map(flight => ({
@@ -103,7 +106,6 @@ export default async function searchFlightsHandler(req, res){
             
             res.status(200).json({flights: flightsData})
             
-            // console.log(`${result.insertedCount} flights added to mongo`)
             
         }catch(error){
 

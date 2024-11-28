@@ -24,7 +24,10 @@ export default async function searchHotelhandler(req, res){
 
             await hotelsCollection.insertMany(hotelsData)
 
+            console.log('Hotels Fetched:', hotelsData);
+
             res.status(200).json({success: true, hotels:hotelsData});
+
 
         }catch(error){
             res.status(500).json({ error: error.message});

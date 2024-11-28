@@ -6,16 +6,16 @@ import { useState } from 'react';
 import Navigation from "./nav";
 
 
-export async function getServerSideStuff(){
-    const res = await fetch('http://localhost:3001/api/saveBooking');
-    const data = await res.join();
-    return{
-        userProps:{
-            users:data.users,
-        },
-    };
+// export async function getServerSideStuff(){
+//     const res = await fetch('http://localhost:3001/api/saveBooking');
+//     const data = await res.join();
+//     return{
+//         userProps:{
+//             users:data.users,
+//         },
+//     };
 
-}
+// }
 
 
 export default function DestinationSelection(props){
@@ -28,6 +28,9 @@ export default function DestinationSelection(props){
     const [hotels, setHotel] = useState([]);
 
     const destination = props.city;
+
+
+    
     const handleSearch = async(e) => {
         e.preventDefault();
 
@@ -44,7 +47,9 @@ export default function DestinationSelection(props){
         const hotelResposne = await fetch('./api/searchHotels', {
             method : 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({city: destination})
+            body: JSON.stringify({
+                city: destination
+            })
             
         });
 
