@@ -425,7 +425,7 @@
   margin-top: 20px; /* This will add a small gap between the navigation bar and the content */
 }
 
-/* Specific background for About Us page */
+/* Specific background for Summary page */
 .summaryBackground {
   background-image: url('/summaryBackground.png');
   background-size: cover;
@@ -529,4 +529,175 @@
   display: flex;
   flex-direction: column;
   gap: 8px; /* Reduced space between inputs */
+}
+
+/* Flight Booking styles */
+.flightBooking {
+  margin: 20px 0;
+}
+
+/* Container for each flight item */
+.flightItem {
+  display: flex;
+  justify-content: space-between; /* Align text and button horizontally */
+  align-items: center; /* Align the button vertically relative to the text */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+/* Flight information styling */
+.flightInfo {
+  flex: 1; /* Allow text to take up available space */
+}
+
+.flightInfo p {
+  margin: 5px 0; /* Add spacing between lines */
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5; /* Better line spacing for readability */
+}
+
+/* Select Flight button styling */
+.selectButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.selectButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Hotel Booking styles */
+.hotelBooking {
+  margin: 20px 0;
+}
+
+/* Container for each hotel item */
+.hotelItem {
+  display: flex;
+  justify-content: space-between; /* Align text and button horizontally */
+  align-items: center; /* Align the button vertically relative to the text */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+/* Hotel information styling */
+.hotelInfo {
+  flex: 1; /* Allow text to take up available space */
+}
+
+.hotelInfo p {
+  margin: 5px 0; /* Add spacing between lines */
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5; /* Better line spacing for readability */
+}
+
+/* Select Hotel button styling */
+.selectButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.selectButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Flight Booking Form styles */
+.flightBooking {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flightBooking h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Form group for each input and button */
+.formGroup {
+  margin-bottom: 15px;
+}
+
+/* Input fields styling */
+.inputField {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+/* Input field focus styling */
+.inputField:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Submit button styling */
+.submitButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the submit button */
+.submitButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Restart Button Styling */
+.restartButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.restartButton:hover {
+  background-color: darkred;
+  transform: scale(1.05);
 }

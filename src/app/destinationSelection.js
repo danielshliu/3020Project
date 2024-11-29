@@ -194,28 +194,29 @@ export default function DestinationSelection(props){
                     {/* Flight Booking */}
                     <div className={styles.flightBooking}>
                         <form onSubmit={(e) => e.preventDefault()}>
-                            <input
-                                type="text"
-                                placeholder="Origin"
-                                value = {origin}
-                                onChange={(e) => setOrigin(e.target.value)} 
-                            />   
-
-                            {/* <input
-                                type="text"
-                                placeholder="people"
-                                value = {people}
-                                onChange={(e) => setPeople(e.target.value)} 
-                            />    */}
-
-                            <input
-                                type="date"
-                                value={date}
-                                onChange={(e) => setDate(e.target.value)} 
-                            />   
-
-                            <button type="submit" onClick={searchFlights}>Search </button>
-                        </form>
+                            <div className={styles.formGroup}>
+            <input
+                type="text"
+                placeholder="Origin"
+                value={origin}
+                onChange={(e) => setOrigin(e.target.value)} 
+                className={styles.inputField}
+            />
+        </div>
+        <div className={styles.formGroup}>
+            <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)} 
+                className={styles.inputField}
+            />
+        </div>
+        <div className={styles.formGroup}>
+            <button type="submit" onClick={searchFlights} className={styles.submitButton}>
+                Search
+            </button>
+        </div>
+    </form>
         
                         <h2>Flight to: {props.city}</h2>
                         <ul>

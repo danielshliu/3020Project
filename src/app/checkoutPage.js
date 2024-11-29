@@ -41,21 +41,35 @@ export default function CheckoutPage(props) {
 
                     {/* Flight Booking */}
                     <div className={styles.flightBooking}>
-                        <h2>Flight to:</h2>
-                        <p>
-                            Flight information goes here.
-                        </p>
-                        <button className={styles.confirmButton}>Confirm</button>
+                        
+                        <h2>Flight To:</h2>
+                        <div className={styles.flightItem}>
+                            <div className={styles.flightInfo}>
+                                <p>Destination: City | Price: $Cost</p>
+                                <p>Flight Time Duration: X hours | Stopovers: Number</p>
+                                <p>Departure Time: Time</p>
+                            </div>
+                            <button onClick={() => setSelectedFlight(flight)} className={styles.selectButton}>
+                                Select Flight
+                            </button>
+                        </div>
+                        {/* Repeat <div className={styles.flightItem}> as needed for additional flights */}
                     </div>
 
                     {/* Hotel Booking */}
-                    <div className={styles.hotelBooking}>
-                        <h2>Hotels At:</h2>
-                        <p>
-                            Hotel information goes here.
-                        </p>
-                        <button className={styles.confirmButton}>Confirm</button>
-                    </div>
+<div className={styles.hotelBooking}>
+    <h2>Hotel Booking:</h2>
+    <div className={styles.hotelItem}>
+        <div className={styles.hotelInfo}>
+            <p>Rating: ⭐⭐⭐⭐ | Price: $Cost per night</p>
+            <p>Check-In: Date | Check-Out: Date</p>
+        </div>
+        <button onClick={() => setSelectedHotel(hotel)} className={styles.selectButton}>
+            Select Hotel
+        </button>
+    </div>
+    {/* Repeat <div className={styles.hotelItem}> as needed for additional hotels */}
+</div>
                 </div>
 
                 <div className={styles.rightColumn}>
