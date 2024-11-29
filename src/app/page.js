@@ -20,7 +20,7 @@ import CheckoutPage from "./checkoutPage"
 export default function Home() {
   return (
     //Comment this out if you want to just render the page your working on
-     //<Body/>
+     <Body/>
       
     // <CountriesList></CountriesList>
     // This is a rendering page so don't touch it
@@ -28,7 +28,7 @@ export default function Home() {
     // <CountryPage></CountryPage>
     //  {/* <Oceania></Oceania> */}
     //   {/* <AboutUs></AboutUs> */}
-      <CheckoutPage></CheckoutPage> 
+      // <CheckoutPage></CheckoutPage> 
     //   {/* <Homepage></Homepage> */}
     //   {/* <Argentina></Argentina> */}
     //   {/* <USA></USA> */}
