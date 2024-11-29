@@ -14,9 +14,10 @@ export default function DestinationSelection(props){
     const [people, setPeople] = useState(1);
     const [flights, setFlights] = useState([]);
     const [hotels, setHotels] = useState([]);
-    const [selectedFlight, setSelectedFlight] = useState(null);
-    const [selectedHotel, setSelectedHotel] = useState(null);
+    const [selectedFlight, setSelectedFlight] = useState([]);
+    const [selectedHotel, setSelectedHotel] = useState([]);
     const [savedSelection, setSavedSelection] = useState(null);
+    const [limit, setLimit] = useState(3);
 
     const cityToIATACode = {
         'Cairo': 'CAI',
@@ -84,73 +85,62 @@ export default function DestinationSelection(props){
             return null;
         }
     }
-   
-      
 
+    const originIATA = getIATAcode(origin)
     const destination = getIATAcode(props.city);
-   
-
+    console.log(destination)
 
     const searchFlights = async () => {
-        const response = await fetch('./api/searchFlight', {
+        const flightResponse = await fetch('./api/searchFlight', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                origin: origin,
+                origin: originIATA,
                 destination: destination,
                 departureDate: date,
+
             }),
         });
+        
+       
+    const flightData = await flightResponse.json();
+    
+ 
 
-    const data = await response.json();
-    console.log(destination)
-    if (Array.isArray(data.flights)) {
-        setFlights(data.flights);
-      } else {
+    if (Array.isArray(flightData.flights) ) {
+        setFlights(flightData.flights);
+    } else {
         console.error("Flights data is not an array:", flightData.flights);
     }
-    console.log(data);
-    console.log(flights)
+    
+    fetchHotels();
+   
+    // console.log(flightData);
 };
 
 
-    
-  // Handle search for flights and hotels
-  const handleSearch = async () => {
-    try {
-      const flightResponse = await fetch('./api/searchFlight', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-            origin: 'YVR', 
-            destination: 'JFK', 
-            date: '2024-12-01', 
-        }),
-      });
 
-    //   const hotelResponse = await fetch("./api/searchHotel", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ city: destination }),
-    //   });
-
-      const flightsData = await flightResponse.json();
-    //   const hotelsData = await hotelResponse.json();
-
-      setFlights(flightsData);
-    //   setHotels(hotelsData);
-    } catch (error) {
-      console.error("Error fetching flights or hotels:", error);
-    }
-  };
 
   // Handle saving the user's selections
   const handleSaveSelection = async () => {
+    
     try {
       const response = await fetch("./api/saveBookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ flight: selectedFlight, hotel: selectedHotel }),
+        body: JSON.stringify({ 
+            origin: selectedFlight.origin,
+            destination: selectedFlight.destination,
+            departureTime: selectedFlight.departureTime,
+            flightprice: selectedFlight.price*people ,
+            duration: selectedFlight.flightTime,
+            stops: selectedFlight.stops,
+            hotelName: selectedHotel.hotelName,
+            hotelPrice: selectedHotel.price,
+            checkIn: selectedHotel.checkIn,
+            checkOut: selectedHotel.checkOut,
+            totalPrice: parseFloat(selectedFlight.price) + parseFloat(selectedHotel.price) * people,
+        })
       });
 
       if (response.ok) {
@@ -175,12 +165,30 @@ export default function DestinationSelection(props){
       console.error("Error fetching saved selection:", error);
     }
   };
+  
+  const fetchHotels = async () =>{
+    try {
+        const response = await fetch("/api/fetchHotels");
+        if (response.ok) {
+          const data = await response.json();
+          setHotels(data); 
+        } else {
+          console.error("Failed to fetch hotels");
+        }
+      } catch (error) {
+        console.error("Error fetching hotels:", error);
+      }
+  };
 
   // Fetch the saved selection when the component loads
-  useEffect(() => {
-    fetchSavedSelection();
-  }, []);
+//   useEffect(() => {
+//     fetchSavedSelection();
+//   }, []);
+    useEffect(() => {
+        console.log("Updated selectedFlight:", selectedFlight);
+    }, [selectedFlight]);
 
+  const hotelsToDisplay = hotels.slice(0,limit);
    
   
     return(
@@ -189,66 +197,104 @@ export default function DestinationSelection(props){
 
             <section className={styles.summaryGrid}>
                 <div className={styles.leftColumn}>
-                {/* <button type="submit" onClick={searchFlights}>Test API </button> */}
-
-                    {/* Flight Booking */}
+            
                     <div className={styles.flightBooking}>
                         <form onSubmit={(e) => e.preventDefault()}>
                             <div className={styles.formGroup}>
-            <input
-                type="text"
-                placeholder="Origin"
-                value={origin}
-                onChange={(e) => setOrigin(e.target.value)} 
-                className={styles.inputField}
-            />
-        </div>
-        <div className={styles.formGroup}>
-            <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)} 
-                className={styles.inputField}
-            />
-        </div>
-        <div className={styles.formGroup}>
-            <button type="submit" onClick={searchFlights} className={styles.submitButton}>
-                Search
-            </button>
-        </div>
-    </form>
+                                <input
+                                    type="text"
+                                    placeholder="Origin"
+                                    value={origin}
+                                    onChange={(e) => setOrigin(e.target.value)} 
+                                    className={styles.inputField}
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                    <input
+                                        type="number"
+                                        placeholder="people"
+                                        value = {people}
+                                        onChange={(e) => setPeople(Number(e.target.value))} 
+                                        className={styles.inputField}
+                                    />   
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <input
+                                    type="date"
+                                    value={date}
+                                    onChange={(e) => setDate(e.target.value)} 
+                                    className={styles.inputField}
+                                />
+                            </div>
+                            <div className={styles.formGroup}>
+                                <button type="submit" onClick={searchFlights} className={styles.submitButton}>
+                                    Search
+                                </button>
+                            </div>
+                        </form>
         
                         <h2>Flight to: {props.city}</h2>
-                        <ul>
-                            {flights.map((flight, index) => (
-                                <li key={index}>
-                                <p>Origin: {flight.origin}</p>
-                                <p>Destination: {flight.destination}</p>
-                                <p>Price: {flight.price}</p>
-                                <p>Flight Time: {flight.flightTime}</p>
-                                
-                                <button
-                                    onClick={() => setSelectedFlight(flight)}
-    
-                                >
-                                    Select Flight
-                                </button>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className={styles.flightItem}>
+                            <div className={styles.flightInfo}>    
+                                <ul>
+                                    {flights.slice(0,3).map((flight, index) => (
+                                        <li key={index}>
+                                        <p>Origin: {flight.origin} | Destination: {flight.destination}</p>
+                                        <p>Flight Time: {flight.flightTime} | Departue Time: {flight.departureTime}</p>
+                                        <p>Price: {flight.price} | Stops : {flight.stops}</p>
+                                        <button
+                                            onClick={() =>  setSelectedFlight(flight)}
+                                            className={styles.selectButton}
+                                            >
+                                            Select Flight
+                                        </button>
+                                        </li>
+                                    ))} 
+                                </ul>
+                            </div>
+                        </div>
                         {/* <p>
                             Flight information goes here.
                         </p> */}
-                        <button className={styles.confirmButton}>Confirm</button>
+
                     </div>
 
                     {/* Hotel Booking */}
                     <div className={styles.hotelBooking}>
-                        <h2>Hotels At:</h2>
-                        <p>
+                        <h2>Hotels At: {props.city}</h2>
+                        <div className={styles.flightItem}>
+                            <div className={styles.flightInfo}>   
+                                <ul>
+                                    {hotelsToDisplay.map((hotel, index) => (
+                                        <li key={index}>
+                                        <p>Name: {hotel.hotelName} | Price: {hotel.price}</p>
+                                        <p>Check in: {hotel.checkIn} | Check out: {hotel.checkOut}</p>
+                                        
+                                        <button
+                                            className={styles.selectButton}
+                                            onClick={() => {
+                                                setSelectedHotel({
+                                                    name: hotel.hotelName,
+                                                    price: hotel.price,
+                                                    checkIn: hotel.checkIn,
+                                                    checkOut: hotel.checkOut,
+                                                });
+                                                
+                                            }}
+                                            >
+                                            Select Hotel
+                                        </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        {/* <p>
                             Hotel information goes here.
-                        </p>
-                        <button className={styles.confirmButton}>Confirm</button>
+                        </p> */}
+                    
                     </div>
                 </div>
 
@@ -294,19 +340,63 @@ export default function DestinationSelection(props){
 
                     {/* Summary */}
                     <div className={styles.summaryInformation}>
-                        <h2>Summary</h2>
-                        <p>
-                            This section will include final information regarding flights to destination and available residencies.
-                        </p>
+                        <div className={styles.flightItem}>
+
+                            <div className={styles.flightInfo}>   
+
+                                <h2>Summary</h2>
+                                <h3>Selected Flight:</h3>
+                                {selectedFlight ? (
+                                    <div>
+                                    <p>Origin: {selectedFlight.origin}</p>
+                                    <p>Destination: {selectedFlight.destination}</p>
+                                    <p>Price: {selectedFlight.price * people} CAD</p>
+                                    </div>
+                                ) : (
+                                    <p>No flight selected.</p>
+                                )}
+
+                                <h3>Selected Hotel:</h3>
+                                {selectedHotel ? (
+                                    <div>
+                                    <p>Name: {selectedHotel.name}</p>
+                                    <p>Price: {selectedHotel.price} CAD</p>
+                                    </div>
+                                ) : (
+                                    <p>No hotel selected.</p>
+                                )}
+
+        
+                            </div>
+                        </div>
                     </div>
 
                     {/* Payment Confirmation */}
                     <div className={styles.confirmationDesicion}>
-                        <h2>Total</h2>
-                        <p>
-                            Your cost of the trip combined with taxes and other fees will be: $__CAD.
-                        </p>
-                        <button className={styles.confirmButton}>Confirm</button>
+                        <div className={styles.flightItem}>
+                            <div className={styles.flightInfo}>
+                                <h2>Total</h2>
+
+                                <p>Your cost of the trip combined with taxes and other fees will be: 
+
+                                </p>
+                                    {selectedFlight && selectedHotel 
+                                    ? <strong>{`${parseFloat(selectedFlight.price)*people + parseFloat(selectedHotel.price)}   CAD`}</strong>
+                                    : "Select a flight and hotel to see the total."}
+
+
+                
+                                <button className={styles.confirmButton} 
+                                onClick={() => {
+                                    props.setPage(30)
+                                    props.setFlightDetails(selectedFlight)
+                                    props.setHotelDetails(selectedHotel)
+                                    props.setTotalPrice(parseFloat(selectedFlight.price)*people + parseFloat(selectedHotel.price))
+                                    handleSaveSelection();
+                                }}>Confirm</button>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

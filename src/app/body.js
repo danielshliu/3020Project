@@ -35,7 +35,9 @@ import FrenchPolynesia from "./frenchpolynesia";
 import NewZealand from "./newzealand";
 
 import DestinationSelection from "./destinationSelection";
+// import CheckoutPage from "./checkoutPage";
 
+import Receipt from "./reciept";
 
 import { useState } from 'react';
 import Home from "./page";
@@ -43,6 +45,9 @@ import Home from "./page";
 export default function Body(){
     const[page , setPage] = useState(1);
     const[selectedCity, setSelectedCity] = useState(null);
+    const[flightDetails, setFlightDetails] = useState(null);
+    const[hotelDetails, setHotelDetails] = useState(null);
+    const[totalPrice, setTotalPrice] = useState(null);
     
     let component;
 
@@ -132,7 +137,15 @@ export default function Body(){
             component = <NewZealand setPage={setPage} setSelectedCity={setSelectedCity} />
             break;
         case 29:
-            component = <DestinationSelection setPage={setPage} city={selectedCity}/>
+            component = <DestinationSelection setPage={setPage} 
+            city={selectedCity} 
+            setFlightDetails={setFlightDetails}    
+            setHotelDetails={setHotelDetails}
+            setTotalPrice={setTotalPrice}
+            />
+            break;
+        case 30:
+            component = <Receipt setPage={setPage} flightDetails={flightDetails} hotelDetails={hotelDetails} totalPrice ={totalPrice}/>
             break;
         
 

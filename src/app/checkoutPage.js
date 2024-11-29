@@ -4,36 +4,7 @@ import Navigation from "./nav";
 export default function CheckoutPage(props) {
     return (
         <div className={styles.summaryBackground}>
-
-            <nav className={styles.navbar}>
-
-                {/* Logo aligned to the left */}
-                <label className={styles.logo}>WanderSphere</label>
-
-                {/* Navigation links */}
-                <ul className={styles.navLinks}>
-                    <li>
-                        <a onClick={() => props.setPage(2)} className={styles.navLink}>
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a onClick={() => props.setPage(1)} className={styles.navLink}>
-                            HomePage
-                        </a>
-                    </li>
-                    <li>
-                        <a onClick={() => props.setPage(3)} className={styles.navLink}>
-                            Countries
-                        </a>
-                    </li>
-                    <li>
-                        <a onClick={() => props.setPage(4)} className={styles.navLink}>
-                            Contact Us
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+             <Navigation setPage={props.setPage}/>
 
             {/* Vacation Booking Summary */}
             <section className={styles.summaryGrid}>
@@ -57,19 +28,19 @@ export default function CheckoutPage(props) {
                     </div>
 
                     {/* Hotel Booking */}
-<div className={styles.hotelBooking}>
-    <h2>Hotel Booking:</h2>
-    <div className={styles.hotelItem}>
-        <div className={styles.hotelInfo}>
-            <p>Rating: ⭐⭐⭐⭐ | Price: $Cost per night</p>
-            <p>Check-In: Date | Check-Out: Date</p>
-        </div>
-        <button onClick={() => setSelectedHotel(hotel)} className={styles.selectButton}>
-            Select Hotel
-        </button>
-    </div>
-    {/* Repeat <div className={styles.hotelItem}> as needed for additional hotels */}
-</div>
+                    <div className={styles.hotelBooking}>
+                        <h2>Hotel Booking:</h2>
+                        <div className={styles.hotelItem}>
+                            <div className={styles.hotelInfo}>
+                                <p>Rating: ⭐⭐⭐⭐ | Price: $Cost per night</p>
+                                <p>Check-In: Date | Check-Out: Date</p>
+                            </div>
+                            <button onClick={() => setSelectedHotel(hotel)} className={styles.selectButton}>
+                                Select Hotel
+                            </button>
+                        </div>
+                        {/* Repeat <div className={styles.hotelItem}> as needed for additional hotels */}
+                    </div>
                 </div>
 
                 <div className={styles.rightColumn}>

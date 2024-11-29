@@ -5,12 +5,8 @@ export default function Navigation(props){
 
     return(
         <nav className={styles.navbar}>
-          {/* Logo aligned to the left */}
           <label className={styles.logo}>WanderSphere</label>
-
-          {/* Navigation links */}
           <ul className={styles.navLinks}>
-        
           <li>
             <a onClick={() => props.setPage(2)} className={styles.navLink}>
               About us

@@ -8,7 +8,7 @@ export default async function searchFlight(req, res){
         
         const {origin, destination, departureDate} = req.body;
        
-        console.log("Request received:", { origin, destination, departureDate });
+        console.log("Request received:", { origin, destination, departureDate});
         try{
 
             // const IATAcode = await amadeus.referenceData.locations.get({
@@ -26,7 +26,7 @@ export default async function searchFlight(req, res){
                 departureDate: departureDate,
                 adults: 1,
                 currencyCode: 'CAD',
-                max: 10,
+                max: 3,
             });
             
             const flightsData = flightOffers.data.map(flight => ({
@@ -35,7 +35,7 @@ export default async function searchFlight(req, res){
                 price: flight.price.total,
                 currency: flight.price.currency,
                 duration: flight.itineraries[0].duration,
-                // flightTime: itineraries[0].duration, // e.g., "PT5H30M"
+                flightTime: flight.itineraries[0].duration, // e.g., "PT5H30M"
                 stops: flight.itineraries[0].segments.length - 1,
                 departureTime: flight.itineraries[0].segments[0].departure.at, 
                 
@@ -46,17 +46,13 @@ export default async function searchFlight(req, res){
             const collection = db.collection('flights');
             await collection.insertMany(flightsData);
             
-            console.log('Flights fetched:', flightsData);
+            // console.log('Flights fetched:', flightsData);
 
             res.status(200).json({flights: flightsData})
-            
-            
-        }catch(error){
-       
-            res.status(500).json({error: 'Failed to fetch flight data'});
-            
-        }
-        
+                
+        }catch(error){   
+            res.status(500).json({error: 'Failed to fetch flight data'});            
+        }       
     }else{
         res.status(405).json({error: 'method not allowed'})
     }

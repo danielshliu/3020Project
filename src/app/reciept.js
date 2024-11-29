@@ -1,23 +1,30 @@
 import styles from "./page.module.css";
-
+import Navigation from "./nav";
 export default function Receipt(props){
 
     // Placeholder for flight and hotel information
-  const flightDetails = {
-    destination: "Bora Bora",
-    price: "$1500",
-    flightDuration: "8 hours",
-    stopovers: 1,
-    departureTime: "2024-12-15 10:00 AM"
-  };
 
-  const hotelDetails = {
-    hotelName: "Bora Bora Beach Resort",
-    rating: "4.5/5",
-    price: "$300 per night",
-    checkIn: "2024-12-15",
-    checkOut: "2024-12-20"
-  };
+    const { flightDetails, hotelDetails }= props
+
+
+
+    console.log("hotel: ", hotelDetails);
+
+  // const flightDetails = {
+  //   destination: "Bora Bora",
+  //   price: "$1500",
+  //   flightDuration: "8 hours",
+  //   stopovers: 1,
+  //   departureTime: "2024-12-15 10:00 AM"
+  // };
+
+  // const hotelDetails = {
+  //   hotelName: "Bora Bora Beach Resort",
+  //   rating: "4.5/5",
+  //   price: "$300 per night",
+  //   checkIn: "2024-12-15",
+  //   checkOut: "2024-12-20"
+  // };
 
   const handleRestart = () => {
     // Logic to restart the process
@@ -27,34 +34,8 @@ export default function Receipt(props){
   return(
     <div className={styles.summaryBackground}>
       <h1 className={styles.heading}>Booking Confirmation</h1>
-      <nav className={styles.navbar}>
-        {/* Logo aligned to the left */}
-        <label className={styles.logo}>WanderSphere</label>
+      <Navigation setPage={props.setPage}/>
 
-        {/* Navigation links */}
-        <ul className={styles.navLinks}>
-          <li>
-            <a onClick={() => props.setPage(2)} className={styles.navLink}>
-              About Us
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(1)} className={styles.navLink}>
-              HomePage
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(3)} className={styles.navLink}>
-              Countries
-            </a>
-          </li>
-          <li>
-            <a onClick={() => props.setPage(4)} className={styles.navLink}>
-              Contact Us
-            </a>
-          </li>
-        </ul>
-      </nav>
 
       {/* Booking Confirmation Section */}
       <section>
@@ -70,20 +51,24 @@ export default function Receipt(props){
         <div className={styles.introBox}>
           <h2>Your Flight Details</h2>
           <p>Destination: {flightDetails.destination}</p>
-          <p>Price: {flightDetails.price}</p>
+          <p>Price: {flightDetails.price} Per Person</p>
           <p>Flight Duration: {flightDetails.flightDuration}</p>
-          <p>Stopovers: {flightDetails.stopovers}</p>
+          <p>Stopovers: {flightDetails.stops}</p>
           <p>Departure Time: {flightDetails.departureTime}</p>
         </div>
 
         {/* Hotel Details */}
         <div className={styles.introBox}>
           <h2>Your Hotel Details</h2>
-          <p>Hotel: {hotelDetails.hotelName}</p>
-          <p>Rating: {hotelDetails.rating}</p>
+          <p>Hotel: {hotelDetails.name}</p>
           <p>Price: {hotelDetails.price}</p>
           <p>Check-In Date: {hotelDetails.checkIn}</p>
           <p>Check-Out Date: {hotelDetails.checkOut}</p>
+        </div>
+
+        <div className={styles.introBox}>
+          <h2>Total: </h2>
+          <strong>{props.totalPrice}</strong>
         </div>
 
         {/* Important Message */}
