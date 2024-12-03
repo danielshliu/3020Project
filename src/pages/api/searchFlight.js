@@ -63,57 +63,57 @@ export default async function searchFlight(req, res){
 
 
 
-// async function testAmadeus(req, res){
-//     try{
+async function testAmadeus(req, res){
+    try{
         
-//         const origin = "NYC";
-//         const destination = "LAX";
-//         const date = "2024-12-01";
+        const origin = "NYC";
+        const destination = "LAX";
+        const date = "2024-12-01";
 
 
 
-//         const response = await amadeus.shopping.flightOffersSearch.get({
-//             originLocationCode: origin,
-//             destinationLocationCode: destination,
-//             departureDate: date,
-//             adults: 1, // Number of passengers
-//             currencyCode: 'CAD', // Price in CAD
-//             max: 20,
-//             //Return date ..
-//         });
+        const response = await amadeus.shopping.flightOffersSearch.get({
+            originLocationCode: origin,
+            destinationLocationCode: destination,
+            departureDate: date,
+            adults: 1, // Number of passengers
+            currencyCode: 'CAD', // Price in CAD
+            max: 20,
+            //Return date ..
+        });
 
     
 
-//         const flights = response.data.map((offer) => {
-//             const itinerary = offer.itineraries[0]; 
-//             const firstSegment = itinerary.segments[0]; 
+        const flights = response.data.map((offer) => {
+            const itinerary = offer.itineraries[0]; 
+            const firstSegment = itinerary.segments[0]; 
 
-//             return{
-//                 origin: firstSegment.departure.iataCode,
-//                 destination: firstSegment.arrival.iataCode,
-//                 price: offer.price.total,
-//                 currency: offer.price.currency,
-//                 flightTime: itinerary.duration, // e.g., "PT5H30M"
-//                 stops: itinerary.segments.length - 1,
-//                 departureTime: firstSegment.departure.at, 
-//             }
-//         });
+            return{
+                origin: firstSegment.departure.iataCode,
+                destination: firstSegment.arrival.iataCode,
+                price: offer.price.total,
+                currency: offer.price.currency,
+                flightTime: itinerary.duration, // e.g., "PT5H30M"
+                stops: itinerary.segments.length - 1,
+                departureTime: firstSegment.departure.at, 
+            }
+        });
 
-//         console.log('Flights fetched:', flights);
+        console.log('Flights fetched:', flights);
 
-//         const client = await clientPromise;
-//         const db = client.db('WanderSphere');
-//         const collection = db.collection('flights');
-//         const result = await collection.insertMany(flights);
+        const client = await clientPromise;
+        const db = client.db('WanderSphere');
+        const collection = db.collection('flights');
+        const result = await collection.insertMany(flights);
 
-//         console.log(`${result.insertedCount} flights added to mongo`)
+        console.log(`${result.insertedCount} flights added to mongo`)
 
-//     }catch(error){
-//         console.error('Error', error.response?.data || error.message);
-//     }
-// }
+    }catch(error){
+        console.error('Error', error.response?.data || error.message);
+    }
+}
 // deleteAllFlight();
-// testAmadeus();
+testAmadeus();
 
 
 

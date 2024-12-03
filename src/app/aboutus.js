@@ -7,10 +7,8 @@ export default function AboutUs(props){
     <h1 className={styles.heading}>About Us</h1>
       <nav className={styles.navbar}>
 
-        {/* Logo aligned to the left */}
         <label className={styles.logo}>WanderSphere</label>
   
-          {/* Navigation links */}
         <ul className={styles.navLinks}>
           <li>
             <a onClick={() => props.setPage(2)} className={styles.navLink}>
@@ -34,8 +32,6 @@ export default function AboutUs(props){
           </li>
         </ul>
       </nav>
-
-        {/* Company Intro Section */}
       <section>
           <div className={styles.introBox}>
             <h2>We are a company that prioritizes you.</h2>
@@ -87,8 +83,6 @@ export default function AboutUs(props){
           </div>
 
       </section>
-
-      {/* Footer Section */}
       <footer className={styles.footer}>
         <p>© 2024 WanderSphere. All rights reserved.</p>
       </footer>

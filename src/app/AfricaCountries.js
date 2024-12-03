@@ -11,7 +11,6 @@ export default function Africa(props){
 
       <div className={styles.countryDisplay}>
 
-        {/* Egypt */}
         <div className={styles.countryCard}>
           <img
             src="/EgyptFlag.png"
@@ -23,7 +22,6 @@ export default function Africa(props){
 
         </div>
 
-        {/* Seychelles */}
         <div className={styles.countryCard}>
 
           <img
@@ -36,7 +34,6 @@ export default function Africa(props){
 
         </div>
 
-        {/* South Africa */}
         <div className={styles.countryCard}>
 
           <img
@@ -54,7 +51,6 @@ export default function Africa(props){
         <h2>Select a destination.</h2>
       </div>
 
-        {/* Footer Section */}
       <footer className={styles.footer}>
         <p>© 2024 WanderSphere. All rights reserved.</p>
       </footer>

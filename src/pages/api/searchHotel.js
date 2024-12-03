@@ -79,7 +79,7 @@ async function testHotel(req,res){
   try{
   
  
-    const keyWord = "NEW";
+    const keyWord = "New York";
 
     //getCityCode
     const cityReference = await amadeus.referenceData.locations.get({

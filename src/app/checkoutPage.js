@@ -6,11 +6,11 @@ export default function CheckoutPage(props) {
         <div className={styles.summaryBackground}>
              <Navigation setPage={props.setPage}/>
 
-            {/* Vacation Booking Summary */}
+        
             <section className={styles.summaryGrid}>
                 <div className={styles.leftColumn}>
 
-                    {/* Flight Booking */}
+                
                     <div className={styles.flightBooking}>
                         
                         <h2>Flight To:</h2>
@@ -24,10 +24,10 @@ export default function CheckoutPage(props) {
                                 Select Flight
                             </button>
                         </div>
-                        {/* Repeat <div className={styles.flightItem}> as needed for additional flights */}
+                        
                     </div>
 
-                    {/* Hotel Booking */}
+                  
                     <div className={styles.hotelBooking}>
                         <h2>Hotel Booking:</h2>
                         <div className={styles.hotelItem}>

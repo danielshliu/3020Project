@@ -8,7 +8,6 @@ export default function ContactUs(props){
         <h1 className={styles.heading}>Contact Information</h1>
           <Navigation setPage={props.setPage}/>
     
-            {/* Company Contact Information */}
           <section>
               <div className={styles.introBox}>
                 <h2>Headquarters</h2>
